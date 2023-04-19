@@ -236,10 +236,10 @@ print <<EOF
 <head>
 	<meta charset="utf-8" />
 	<title>attempts table</title>
-	<script src="https://demo.webwork.rochester.edu/webwork2_files/js/apps/InputColor/color.js" type="text/javascript"></script>
+	<script src="https://demo.webwork.rochester.edu/webwork2_files/js/InputColor/color.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="https://demo.webwork.rochester.edu/webwork2_files/themes/math4/math4.css"/>
 	<script type="text/javascript" src="https://demo.webwork.rochester.edu/webwork2_files/mathjax/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
-	<script src="https://demo.webwork.rochester.edu/webwork2_files/js/apps/AddOnLoad/addOnLoadEvent.js" type="text/javascript"></script>
+	<script src="https://demo.webwork.rochester.edu/webwork2_files/js/AddOnLoad/addOnLoadEvent.js" type="text/javascript"></script>
 	$color_input_blanks_script
 	<script type="text/javascript" src="https://demo.webwork.rochester.edu/webwork2_files/js/vendor/jquery/jquery.js"></script>
 	<script type="text/javascript" src="https://demo.webwork.rochester.edu/webwork2_files/js/jquery-ui-1.9.0.js"></script>
@@ -250,16 +250,16 @@ print <<EOF
 		$(function(){
 			$("table.attemptResults td[onmouseover*='Tip']").each(function () {
 			var data = $(this).attr('onmouseover').match(/Tip\('(.*)'/);
-			if (data) { data = data[1] }; // not sure I understand this, but sometimes the match fails 
+			if (data) { data = data[1] }; // not sure I understand this, but sometimes the match fails
 			//on the presentation of a matrix  and then causes errors throughout the rest of the script
 			$(this).attr('onmouseover','');
 			if (data) {
 				$(this).wrapInner('<div class="results-popover" />');
 
 				var popdiv = $('div', this);
-				popdiv.popover({placement:'bottom', html:'true', trigger:'click',content:data});	
-			} 
-		
+				popdiv.popover({placement:'bottom', html:'true', trigger:'click',content:data});
+			}
+
 			});
 		}
     </script>
